@@ -181,7 +181,7 @@ export async function updateItem(
   updates: Record<string, unknown>
 ) {
   const now = new Date().toISOString()
-  const updateData = { ...updates, updatedAt: now }
+  const updateData: Record<string, unknown> = { ...updates, updatedAt: now }
   delete updateData.id // Can't update the key
 
   const keys = Object.keys(updateData)
